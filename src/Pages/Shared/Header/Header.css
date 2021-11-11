@@ -1,0 +1,10 @@
+.nav-bar{
+    /* background-color: rgb(242, 235, 255); */
+    /* background-color: rgb(240, 235, 209); */
+    background-color: #f7f6f1;
+}
+.logo{
+    color: tomato;
+    font-size: 50px;
+    font-weight: 500;
+}
