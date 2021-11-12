@@ -4,6 +4,12 @@
 
 //= whole registration page is refreshing on registration button click.. so the spinner cant be seen. solve it
 
-//show name at navbar from registration user..  12-72-3
+//=show name at navbar from registration user..  12-72-3
 
-// make explore page = all products where produts load from the api,,, at home page show 6 products writing the informations in it
+//= make explore page = all products where produts load from the api,,, at home page show 6 products writing the informations in it
+
+// reviews er modde ratings input lagbe ..... search goole
+
+//admin  things
+
+//put all dashboard things in dashboard

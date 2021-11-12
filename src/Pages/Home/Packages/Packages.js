@@ -1,5 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import Package from '../Package/Package';
+import { NavLink } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import './Packages.css'
 
 const Packages = () => {
@@ -22,7 +24,9 @@ const Packages = () => {
                 ></Package>)
             }
         </div>
-        <button onClick="/products">See More</button>
+<NavLink style={{textDecoration: 'none'}} to="/products">
+    <Button variant="danger border-danger ">See more Collections</Button>
+</NavLink>
         </div>
     );
 };

@@ -13,10 +13,12 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import About from './Pages/About/About';
 import AddPackage from './Pages/AddPackage/AddPackage';
+import AddReview from './Pages/AddReview/AddReview';
 import ManagePackages from './Pages/ManagePackages/ManagePackages';
 import BookingReview from './Pages/BookingReview/BookingReview';
 import Footer from './Pages/Shared/Footer/Footer';
 import ManageBookings from './Pages/ManageBookings/ManageBookings';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -40,6 +42,9 @@ function App() {
           <Route path="/register">
             <Register></Register>
           </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
           
           <PrivateRoute path="/about">
             <About></About>
@@ -57,6 +62,12 @@ function App() {
           <Route path="/addPackage">
             <AddPackage></AddPackage>
           </Route>
+
+          <Route path="/addReview">
+            <AddReview></AddReview>
+          </Route>
+
+          
           <Route path="/managePackages">
             <ManagePackages></ManagePackages>
           </Route>
