@@ -12,13 +12,13 @@ import Header from './Pages/Shared/Header/Header';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import About from './Pages/About/About';
-import AddPackage from './Pages/AddPackage/AddPackage';
-import AddReview from './Pages/AddReview/AddReview';
-import ManagePackages from './Pages/ManagePackages/ManagePackages';
+import AddPackage from './Pages/Dashboard/AddPackage/AddPackage';
+import AddReview from './Pages/Dashboard/AddReview/AddReview';
+import ManagePackages from './Pages/Dashboard/ManagePackages/ManagePackages';
 import BookingReview from './Pages/BookingReview/BookingReview';
 import Footer from './Pages/Shared/Footer/Footer';
-import ManageBookings from './Pages/ManageBookings/ManageBookings';
-import Dashboard from './Pages/Dashboard/Dashboard';
+import ManageAllOrders from './Pages/Dashboard/ManagaAllOrders/ManageAllOrders';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -74,8 +74,8 @@ function App() {
           <Route path="/bookingReview">
             <BookingReview></BookingReview>
           </Route>
-          <Route path="/manageBookings">
-            <ManageBookings></ManageBookings>
+          <Route path="/manageAllOrders">
+            <ManageAllOrders></ManageAllOrders>
           </Route>
 
           <Route path="*">

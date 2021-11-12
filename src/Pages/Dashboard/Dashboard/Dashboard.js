@@ -16,15 +16,15 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Home from '../Home/Home/Home';
+import Banner from '../../Home/Banner/Banner';
 import { Button } from 'react-bootstrap';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddPackage from '../AddPackage/AddPackage';
 import ManagePackages from '../ManagePackages/ManagePackages';
 import AddReview from '../AddReview/AddReview';
 import Payment from '../Payment/Payment';
-import useAuth from '../../hooks/useAuth';
-import AdminRoute from '../Login/AdminRoute/AdminRoute';
+import useAuth from '../../../hooks/useAuth';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 const drawerWidth = 190;
 
@@ -45,18 +45,18 @@ function Dashboard(props) {
         <Divider/>
      {!admin && 
      <Box>
-         <h5>User Portal</h5>
-         <Link to={`${url}/addReview`}><Button variant="text text-danger mt-5">Add a review</Button></Link>
-     <Link to={`${url}/myOrders`}><Button variant="text text-danger mt-2">My Purchases</Button></Link>
-     <Link to={`${url}/payment`}><Button variant="text text-danger mt-2">Payment</Button></Link>
+        <h5>User Portal</h5>
+        <Link to={`${url}/addReview`}><Button variant="text text-danger mt-5">Add a review</Button></Link>
+        <Link to={`${url}/myOrders`}><Button variant="text text-danger mt-2">My Purchases</Button></Link>
+        <Link to={`${url}/payment`}><Button variant="text text-danger mt-2">Payment</Button></Link>
          </Box>}
      {admin && 
         <Box>
-            <h5>Admin Portal</h5>
-            <Link to={`${url}/addPackage`}><Button variant="text text-danger mt-2">Add to collections</Button></Link>
-            <Link to={`${url}/makeAdmin`}><Button variant="text text-danger mt-2">Make an Admin</Button></Link>
-            <Link to={`${url}/managePackages`}><Button variant="text text-danger mt-2">Manage Collections</Button></Link>
-            <Link to={`${url}/manageAllOrders`}><Button variant="text text-danger mt-2">Manage All Orders</Button></Link>
+          <h5>Admin Portal</h5>
+          <Link to={`${url}/addPackage`}><Button variant="text text-danger mt-2">Add to collections</Button></Link>
+          <Link to={`${url}/makeAdmin`}><Button variant="text text-danger mt-2">Make an Admin</Button></Link>
+          <Link to={`${url}/managePackages`}><Button variant="text text-danger mt-2">Manage Collections</Button></Link>
+          <Link to={`${url}/manageAllOrders`}><Button variant="text text-danger mt-2">Manage All Orders</Button></Link>
         </Box>}
      
     
@@ -120,7 +120,7 @@ function Dashboard(props) {
           <Toolbar/>
         
         <Route exact path={path}>
-            <Home></Home>
+            <Banner></Banner>
         </Route>
 {/* admin routes */}
         <AdminRoute path={`${path}/makeAdmin`}>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from 'react';
-import Packages from '../Home/Packages/Packages';
+// import Packages from '../../Home/Home';
 // import usePackages from '../../hooks/usePackages';
 
 const ManagePackages = () => {
