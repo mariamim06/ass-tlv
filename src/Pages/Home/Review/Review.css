@@ -1,13 +1,3 @@
-/* .review{
-    width: 100%;
-    background-color: rgb(245, 205, 154);
-    margin: px;
-    
-    border-radius: 4px;
-}
-.review img{
-    border-radius: 70px;
-} */
 
 .review{
     display: flex;
@@ -25,4 +15,18 @@
     padding: 0%;
     /* margin: 6px; */
     height: fit-content;
+}
+
+
+@media only screen and (max-width:688px){
+    .review{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width:689px) and (max-width:991px){
+    .review{
+        display: flex;
+        flex-direction: column;
+    }
 }
