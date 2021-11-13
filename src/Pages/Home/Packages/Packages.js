@@ -7,7 +7,7 @@ import './Packages.css'
 const Packages = () => {
     const [packages, setPackages] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://sheltered-beach-22453.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setPackages(data));
     }, [])
@@ -18,7 +18,7 @@ const Packages = () => {
             <div className="package-container">
             
             {
-                packages.slice(2, 6).map(pacKage => <Package
+                packages.slice(2, 8).map(pacKage => <Package
                     id={pacKage.id}
                     pacKage ={pacKage}
                 ></Package>)

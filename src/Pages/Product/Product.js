@@ -6,7 +6,7 @@ const Product = ({product}) => {
     const { _id, name, price, img, ratings, description} = product;
     return (
         <div className="product">
-             <img src={img} alt="" /> 
+             <img className="img-fluid" src={img} alt="" /> 
 
 
 <h2>{name}</h2>

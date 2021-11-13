@@ -53,11 +53,11 @@ const Register = () => {
 
 {!isLoading &&
 <Form onSubmit={handleLoginSubmit}>
-<Form.Group className="mt-3 d-flex" controlId="formBasicName">
+<Form.Group className="mt-3 flex-box" controlId="formBasicName">
 <Form.Label className="m-3">Name:</Form.Label>
 <Form.Control type="text" placeholder="Enter name" name="name" onBlur={handleOnChange}/>
 </Form.Group>
-<Form.Group className="mt-3 d-flex" controlId="formBasicEmail">
+<Form.Group className="mt-3 flex-box" controlId="formBasicEmail">
 <Form.Label className="m-3">Email:</Form.Label>
 <Form.Control type="email" placeholder="Enter email" name="email" onBlur={handleOnChange}/>
 </Form.Group>
@@ -65,14 +65,14 @@ const Register = () => {
 We'll never share your email with anyone else.
 </Form.Text>
 
-<Form.Group className="my-3 d-flex" controlId="formBasicPassword">
+<Form.Group className="my-3 flex-box" controlId="formBasicPassword">
 <Form.Label className="m-3">Password:</Form.Label>
 <Form.Control type="password" placeholder="Password" name="password"  onBlur={handleOnChange}/>
 </Form.Group>
 <Form.Text className="text-muted">
 Your password must contain letter, digit and symbol.
 </Form.Text>
-<Form.Group className="my-3 d-flex" controlId="formBasicPassword">
+<Form.Group className="my-3 flex-box" controlId="formBasicPassword">
 <Form.Label className="m-3">Retype:</Form.Label>
 <Form.Control type="password" placeholder="Password" name="password2"  onBlur={handleOnChange}/>
 </Form.Group>

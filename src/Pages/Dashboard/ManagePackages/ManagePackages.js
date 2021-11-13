@@ -6,13 +6,13 @@ const ManagePackages = () => {
   
     const [packages, setPakages] = useState([])
     useEffect( () => {
-        fetch('http://localhost:5000/products')
+        fetch('https://sheltered-beach-22453.herokuapp.com/products')
         .then(res=>res.json())
         .then(data => setPakages(data))
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://sheltered-beach-22453.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -28,11 +28,11 @@ const ManagePackages = () => {
         })
     }
     return (
-        <div>
+        <div className="">
             <h2>Manage Pakages</h2>
             {
                 packages.map(pacKage => <div key={pacKage._id}>
-                    <img src={pacKage.img} alt="" />
+                    <img className="img-fluid" src={pacKage.img} alt="" />
                     <h3>{pacKage.name}</h3>
                     <p>{pacKage.description}</p>
                     <button onClick={ () => handleDelete(pacKage._id)} className="btn btn-warning">Delete</button>

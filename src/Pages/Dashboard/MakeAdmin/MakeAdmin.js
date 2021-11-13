@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import './MakeAdmin.css';
 import { Button, TextField, Alert } from '@mui/material';
+import {useForm} from "react-hook-form";
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
+    const { reset} = useForm();
 
     const handleOnBlur = e =>{
         setEmail(e.target.value);
@@ -13,7 +15,7 @@ const MakeAdmin = () => {
 
     const handleAdminSubmit = e =>{
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://sheltered-beach-22453.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -25,7 +27,10 @@ const MakeAdmin = () => {
             if(data.modifiedCount){
                 console.log(data);
                 setSuccess(true);
+                reset();
+
             }
+            
         console.log(data);
         })
         e.preventDefault()

@@ -8,8 +8,9 @@ const Review = ({review}) => {
     const { model, reviewerName, comment, img, price, rating} = review;
     return (
 
-        <div className="review">
-            <img src={img} alt="" /> 
+        <div className="container-fluid">
+        <div className=" review">
+            <img className="img-fluid" src={img} alt="" /> 
            <div className="text-start px-5">
            <h2>{model}</h2>
            <p className="text-bold">by {reviewerName}</p>
@@ -18,6 +19,7 @@ const Review = ({review}) => {
            </div>
            <h5 className="text-start">Price: ${price}</h5>
            
+        </div>
         </div>
     );
 };

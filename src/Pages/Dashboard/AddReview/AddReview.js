@@ -10,7 +10,7 @@ const AddReview = () => {
     const onSubmit = data =>{ 
         console.log(data);
 
-        axios.post('http://localhost:5000/reviews', data)
+        axios.post('https://sheltered-beach-22453.herokuapp.com/reviews', data)
         .then(res => {
             console.log(res);
             if(res.data.insertedId){

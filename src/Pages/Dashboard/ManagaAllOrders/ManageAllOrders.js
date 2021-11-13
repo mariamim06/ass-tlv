@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect( () => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://sheltered-beach-22453.herokuapp.com/orders')
         .then(res=>res.json())
         .then(data => setOrders(data))
     }, [])
@@ -17,7 +17,7 @@ const ManageAllOrders = () => {
 
     const updateStatus = id => {
         
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://sheltered-beach-22453.herokuapp.com/orders/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -33,7 +33,7 @@ const ManageAllOrders = () => {
     }
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://sheltered-beach-22453.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -54,11 +54,11 @@ const ManageAllOrders = () => {
             <h1>Manage All Orders</h1>
             {
                 orders.map(order => <div key={order._id}>
-                   <div className="orders">
-                   <img src={order.productImg} alt="" />
+                   <div className="container-fluid orders">
+                   <img className="img-fluid" src={order.productImg} alt="" />
                     <div>
                     <h5>Car Model: {order.productName}</h5>
-                    <h6>{order.buyerName}</h6>
+                    <h6>Buyer Name: {order.buyerName}</h6>
                     {/* <p>{order.description}</p> */}
                     <div className="d-flex">
                         

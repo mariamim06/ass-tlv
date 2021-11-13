@@ -47,7 +47,7 @@ const Login = () => {
 
 
 <Form onSubmit={handleLoginSubmit}>
-<Form.Group className="mt-3 d-flex" controlId="formBasicEmail">
+<Form.Group className="mt-3 flex-box" controlId="formBasicEmail">
 <Form.Label className="m-3">Email:</Form.Label>
 <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleOnChange}/>
 </Form.Group>
@@ -55,7 +55,7 @@ const Login = () => {
 We'll never share your email with anyone else.
 </Form.Text>
 
-<Form.Group className="my-3 d-flex" controlId="formBasicPassword">
+<Form.Group className="my-3 flex-box" controlId="formBasicPassword">
 <Form.Label className="m-3">Password:</Form.Label>
 <Form.Control type="password" placeholder="Password" name="password"  onChange={handleOnChange}/>
 </Form.Group>
@@ -69,7 +69,7 @@ We'll never share your email with anyone else.
 </Button>
 <br />
 <NavLink style={{textDecoration: 'none'}} to="/register">
-    <Button variant="text text-danger border-danger ">New User? Please Register...</Button>
+    <Button className="" variant="text text-danger border-danger ">New User? Please Register...</Button>
 </NavLink>
 <br />
 <button onClick={ handleGoogleLogin } className="btn btn-warning my-btn my-3">Google Sign In</button>

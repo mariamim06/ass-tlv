@@ -14,7 +14,7 @@ const Purchase = () => {
     const [orderSuccess, setOrderSuccess] = useState(false);
 
     useEffect( () =>{
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://sheltered-beach-22453.herokuapp.com/products/${productId}`)
         .then(res => res.json())
         .then(data => setProduct(data));
     }, [])
@@ -47,7 +47,7 @@ const Purchase = () => {
         }
         console.log(order);
         //send order to server
-        fetch('http://localhost:5000/orders', {
+        fetch('https://sheltered-beach-22453.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -129,7 +129,7 @@ const Purchase = () => {
     {/* ------------ ----------------- ---------------------- --------------------- ---------------- -------------  Clicked product details section -------------- -------------- ------------ --------------- ----      ----- ------------- */}
         
     <div className="product">
-        <img src={product.img} alt="" /> 
+        <img className="img-fluid" src={product.img} alt="" /> 
 
         <h5>Price: ${product.price}</h5>
 

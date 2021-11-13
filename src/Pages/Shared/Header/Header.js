@@ -26,13 +26,12 @@ const Header = () => {
      
       {user?.email ?
 
-      <div className="d-flex">
-      <Nav.Link className="" as={Link} to="/dashboard">Dashboard</Nav.Link>
-
-      <Button onClick={ logOut } variant="light">Logout</Button>
+      <div className="">
+      <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
       <Navbar.Text>
         Signed in as: <a href="#login">{user?.displayName}</a>
       </Navbar.Text>
+      <Button onClick={ logOut } variant="danger mx-3">Logout</Button>
       </div>
       :
       <Nav.Link as={Link} to="/login">Login</Nav.Link>

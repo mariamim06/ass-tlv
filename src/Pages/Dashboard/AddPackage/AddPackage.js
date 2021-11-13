@@ -10,7 +10,7 @@ const AddPackage = () => {
     const onSubmit = data =>{ 
         console.log(data);
 
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://sheltered-beach-22453.herokuapp.com/products', data)
         .then(res => {
             console.log(res)
             if(res.data.insertedId){

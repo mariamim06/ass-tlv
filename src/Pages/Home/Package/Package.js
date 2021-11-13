@@ -9,7 +9,7 @@ const Package = ({pacKage}) => {
     const { _id, name, cost, days, nights, img, ratings, description} = pacKage;
     return (
         <div className="package">
-            <img src={img} alt="" /> 
+            <img className="img-fluid" src={img} alt="" /> 
 
             <h2>{name}</h2>
             <p className="px-3">{description}</p>

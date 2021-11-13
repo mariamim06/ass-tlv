@@ -8,7 +8,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect( () => {
-        const url = `http://localhost:5000/userOrders?email=${user.email}`
+        const url = `https://sheltered-beach-22453.herokuapp.com/userOrders?email=${user.email}`
         fetch(url)
         .then(res=> res.json())
         .then(data => setOrders(data));
@@ -16,7 +16,7 @@ const MyOrders = () => {
 
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://sheltered-beach-22453.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -38,9 +38,9 @@ const MyOrders = () => {
             {
                 orders.map(order => <div key={order._id}>
                     <div className="orders">
-                    <img src={order.productImg} alt="" />
+                    <img className="img-fluid" src={order.productImg} alt="" />
                     <div>
-                    <h3>{order.buyerName}</h3>
+                    <h6>Buyer Name: {order.buyerName}</h6>
                     <h3>Car Model: {order.productName}</h3>
                     {/* <p>{order.description}</p> */}
                      {order.status && <div class="alert alert-success w-10" role="alert">Order Shipped!</div>}
