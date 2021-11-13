@@ -20,17 +20,15 @@ const Header = () => {
       <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
       <Nav.Link as={Link} to="/about">About</Nav.Link>
       <Nav.Link as={Link} to="/products">Collections</Nav.Link>
-      <Nav.Link as={HashLink} to="/home#packages">Packages</Nav.Link>
+      {/* <Nav.Link as={HashLink} to="/home#packages">Packages</Nav.Link> */}
       <Nav.Link as={HashLink} to="/home#reviews">Reviews</Nav.Link>
       
      
       {user?.email ?
 
       <div className="d-flex">
-      <Nav.Link className="mt-4" as={Link} to="/dashboard">Dashboard</Nav.Link>
-      {/* <Nav.Link as={Link} to="/bookingReview">My Bookings</Nav.Link>
-      <Nav.Link as={Link} to="/manageBookings">Manage All Bookings</Nav.Link>
-      <Nav.Link as={Link} to="/addPackage">Add a new Package</Nav.Link> */}
+      <Nav.Link className="" as={Link} to="/dashboard">Dashboard</Nav.Link>
+
       <Button onClick={ logOut } variant="light">Logout</Button>
       <Navbar.Text>
         Signed in as: <a href="#login">{user?.displayName}</a>

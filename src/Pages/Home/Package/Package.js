@@ -13,7 +13,7 @@ const Package = ({pacKage}) => {
 
             <h2>{name}</h2>
             <p className="px-3">{description}</p>
-            <Link to={`/booking/${_id}`}>
+            <Link to={`/purchase/${_id}`}>
             <button className="btn btn-warning my-2">Book {name.toLowerCase()} </button>
             </Link>
         </div>

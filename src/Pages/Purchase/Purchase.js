@@ -3,13 +3,15 @@ import './Purchase.css';
 import { useParams } from 'react-router';
 import { Form, Button, Spinner} from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
-import {Link} from 'react-router-dom'
+import {useLocation, useHistory} from 'react-router-dom'
+import { Alert } from '@mui/material';
 
 
 const Purchase = () => {
     const {productId} = useParams();
     const [product, setProduct] = useState({});
     const {user} = useAuth();
+    const [orderSuccess, setOrderSuccess] = useState(false);
 
     useEffect( () =>{
         fetch(`http://localhost:5000/products/${productId}`)
@@ -17,21 +19,59 @@ const Purchase = () => {
         .then(data => setProduct(data));
     }, [])
 
+    const initialInfo = {buyerName: user.displayName, email: user.email, phone: '', address: ''}
+    const [purchaseInfo, setPurchaseInfo] = useState(initialInfo);
 
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
-        // const newLoginData = {...loginData};
-        // newLoginData[field] = value;
-        // setLoginData(newLoginData);
-        console.log(field, value);
+        const newInfo = {...purchaseInfo};
+        newInfo[field] = value;
+        setPurchaseInfo(newInfo);
+        console.log(newInfo);
     }
+
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/products';
 
 
     const handlePurchaseSubmit = e => {
-        alert('submitting');
+       
+        const order = {
+            ...purchaseInfo,
+            productName: product.name,
+            productImg: product.img,
+            productDescription: product.description,
+            productPrice: product.price,
+        }
+        console.log(order);
+        //send order to server
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                setOrderSuccess(true);
+                history.push(redirect_uri)
+            }
+            console.log(data);
+            
+        })
+        // .then(result => {
+        //     history.push(redirect_uri)
+        // })
+
+
+        alert('Order Confirmed');
         e.preventDefault();
     }
+    
 
 
     return (
@@ -46,7 +86,7 @@ const Purchase = () => {
 <Form onSubmit={handlePurchaseSubmit}>
     <Form.Group className="mt-3 d-flex" controlId="formBasicText">
         <Form.Label className="m-3">Name:</Form.Label>
-        <Form.Control type="text" placeholder="Enter name" name="name" defaultValue={user.displayname} onBlur={handleOnChange}/>
+        <Form.Control type="text" placeholder="Enter name" name="buyerName" defaultValue={user.displayName} onBlur={handleOnChange}/>
     </Form.Group>
     <Form.Group className="mt-3 d-flex" controlId="formBasicEmail">
         <Form.Label className="m-3">Email:</Form.Label>
@@ -58,7 +98,7 @@ const Purchase = () => {
     </Form.Group>
     <Form.Group className="mt-3 d-flex" controlId="formBasicNumber">
         <Form.Label className="m-3">Number:</Form.Label>
-        <Form.Control type="number" placeholder="Enter our Number" name="number" onBlur={handleOnChange}/>
+        <Form.Control type="number" placeholder="Enter our Number" name="phone" onBlur={handleOnChange}/>
     </Form.Group>
     <Form.Text className="text-muted">We'll never share your informations with anyone else.</Form.Text>
 
@@ -79,6 +119,7 @@ const Purchase = () => {
 <br />  */}
 {/* google sign in */}
 {/* <button onClick={ handleGoogleLogin } className="btn btn-warning my-btn mt-3">Google Sign In</button> */}
+{orderSuccess && <h1>Order Placed Successfully</h1>}
 </Form>
 
 

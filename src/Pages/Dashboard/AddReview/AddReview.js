@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React from 'react';
-import {useForm} from "react-hook-form";
+import {useForm, Controller} from "react-hook-form";
 import './AddReview.css'
-
+import { Rating } from '@mui/material';
 
 const AddReview = () => {
 
-    const {register, handleSubmit, reset} = useForm();
+    const {register, handleSubmit, reset, control} = useForm();
     const onSubmit = data =>{ 
         console.log(data);
 
@@ -29,6 +29,13 @@ const AddReview = () => {
                 <textarea {...register("comment")} placeholder="Comment" />
                 <input type="number" {...register("price")} placeholder="Price" />
                 <input {...register("img")} placeholder="image url" />
+                <Controller
+          name="rating"
+          control={control}
+          defaultValue={3}
+          rules={{ required: true }}
+          render={(props) => <Rating name="rating" />}
+        />
                 <input type="submit"/>
             </form>
         </div>

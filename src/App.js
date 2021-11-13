@@ -7,7 +7,6 @@ import Home from './Pages/Home/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
 import Products from './Pages/Products/Products';
 import Purchase from './Pages/Purchase/Purchase';
-import Booking from './Pages/Booking/Booking/Booking';
 import Header from './Pages/Shared/Header/Header';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
@@ -15,7 +14,6 @@ import About from './Pages/About/About';
 import AddPackage from './Pages/Dashboard/AddPackage/AddPackage';
 import AddReview from './Pages/Dashboard/AddReview/AddReview';
 import ManagePackages from './Pages/Dashboard/ManagePackages/ManagePackages';
-import BookingReview from './Pages/BookingReview/BookingReview';
 import Footer from './Pages/Shared/Footer/Footer';
 import ManageAllOrders from './Pages/Dashboard/ManagaAllOrders/ManageAllOrders';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
@@ -55,10 +53,6 @@ function App() {
             <Purchase></Purchase>
           </PrivateRoute>
 
-          <PrivateRoute path="/booking/:packageId">
-            <Booking></Booking>
-          </PrivateRoute>
-          
           <Route path="/addPackage">
             <AddPackage></AddPackage>
           </Route>
@@ -71,9 +65,7 @@ function App() {
           <Route path="/managePackages">
             <ManagePackages></ManagePackages>
           </Route>
-          <Route path="/bookingReview">
-            <BookingReview></BookingReview>
-          </Route>
+         
           <Route path="/manageAllOrders">
             <ManageAllOrders></ManageAllOrders>
           </Route>

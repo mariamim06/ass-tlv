@@ -25,6 +25,8 @@ import AddReview from '../AddReview/AddReview';
 import Payment from '../Payment/Payment';
 import useAuth from '../../../hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import MyOrders from '../MyOrders/MyOrders';
+import ManageAllOrders from '../ManagaAllOrders/ManageAllOrders';
 
 const drawerWidth = 190;
 
@@ -133,7 +135,7 @@ function Dashboard(props) {
             <ManagePackages></ManagePackages>
         </AdminRoute>
         <AdminRoute path={`${url}/manageAllOrders`}>
-            <AddReview></AddReview>
+            <ManageAllOrders></ManageAllOrders>
         </AdminRoute>
 
 {/* Normal registered users routes */}
@@ -144,7 +146,7 @@ function Dashboard(props) {
             <Payment></Payment>
         </Route>
         <Route path={`${url}/myOrders`}>
-            <AddReview></AddReview>
+            <MyOrders></MyOrders>
         </Route>
      
       </Box>
