@@ -29,7 +29,7 @@ const ManagePackages = () => {
     }
     return (
         <div className="">
-            <h2>Manage Pakages</h2>
+            <h2>Manage Collections</h2>
             {
                 packages.map(pacKage => <div key={pacKage._id}>
                     <img className="img-fluid" src={pacKage.img} alt="" />

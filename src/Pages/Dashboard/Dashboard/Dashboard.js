@@ -49,7 +49,7 @@ function Dashboard(props) {
      <Box>
         <h5>User Portal</h5>
         <Link to={`${url}/addReview`}><Button variant="text text-danger mt-5">Add a review</Button></Link>
-        <Link to={`${url}/myOrders`}><Button variant="text text-danger mt-2">My Purchases</Button></Link>
+        <Link to={`${url}/myOrders`}><Button variant="text text-danger mt-2">My Orders</Button></Link>
         <Link to={`${url}/payment`}><Button variant="text text-danger mt-2">Payment</Button></Link>
          </Box>}
      {admin && 

@@ -24,7 +24,7 @@ const MyOrders = () => {
         .then(data => {
             console.log(data);
             if('data.deleteCount'){
-                alert('deleted')
+                alert('Want to delete?')
                 const remaining = orders.filter(order => order._id !== id);
                 setOrders(remaining);
             }
