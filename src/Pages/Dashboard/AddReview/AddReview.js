@@ -32,14 +32,15 @@ const AddReview = () => {
             <textarea {...register("comment")} placeholder="Comment" />
             <input type="number" {...register("price")} placeholder="Price" />
             <input {...register("img")} placeholder="image url" />
-            <Controller
+            <input type="number" {...register("rating", { min: 0, max: 5 })} placeholder="Rate Us (1-5)" />
+            
+            {/* <Controller
       name="rating"
       control={control}
-      defaultValue={3}
       rules={{ required: true }}
       render={(props) => <Rating name="rating" />}
       
-    />
+    /> */}
             <input type="submit"/>
         </form> 
         }

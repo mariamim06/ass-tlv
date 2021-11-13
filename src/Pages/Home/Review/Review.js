@@ -15,8 +15,9 @@ const Review = ({review}) => {
            <h2>{model}</h2>
            <p className="text-bold">by {reviewerName}</p>
           <p className="">{comment}</p>
-          <Rating name="read-only" value={rating} readOnly />
-           </div>
+          <p>{rating}</p>
+           <Rating name="read-only" value={rating} count={rating} readOnly />
+           </div> 
            <h5 className="text-start">Price: ${price}</h5>
            
         </div>
