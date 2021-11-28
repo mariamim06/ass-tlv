@@ -1,5 +1,6 @@
 {
   "projects": {
+<<<<<<< HEAD
     "default": "tourx-website-3c1ea",
     "deploy": "niche-product-website-f5bd0",
     "production": "niche-product-website-f5bd0"
@@ -14,3 +15,8 @@
     }
   }
 }
+=======
+    "default": "tourx-website-3c1ea"
+  }
+}
+>>>>>>> 47fd3ab85abf91f3531099a30a5dbfb065415b3d
