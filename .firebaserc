@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "tourx-website-3c1ea",
+    "deploy": "niche-product-website-f5bd0",
+    "production": "niche-product-website-f5bd0"
+  },
+  "targets": {
+    "tourx-website-3c1ea": {
+      "hosting": {
+        "app": [
+          "carX-website-56hyu24d"
+        ]
+      }
+    }
+  }
+}
